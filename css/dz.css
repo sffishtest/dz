@@ -415,7 +415,7 @@ nav .navbar-right{
     right: 0;
 }
 
-@media screen and (max-width: 900px) { /* sm */
+@media screen and (max-width: 970px) { /* sm */
     .navlist li{
         padding-left: 25px;        
     }
