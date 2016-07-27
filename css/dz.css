@@ -523,27 +523,49 @@ nav .navbar-right{
 
 .rolepic, .mainpic{
     z-index: 1;
-    position: relative;
-    width: 1000px;
+    position: absolute;
+    top:0;
+    width: 880px;
     height: 580px;
     /*background-image: url('../image/role/t_kong.png');*/
-    background-size: contain;
+    background-size: cover;
     margin-left: 5%;
     margin-right: 0;
     background-repeat: no-repeat;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    opacity: 0;   
+}
 
-    -webkit-transition: background-image 0.8s ease-in-out;
-    transition: background-image 0.8s ease-in-out;
+.rolepic[_char="ru"]{
+    background-image: url('../image/role/t_kong.png');
+}
+.rolepic[_char="mo"]{
+    background-image: url('../image/role/t_mo.png');
+}
+.rolepic[_char="dao"]{
+    background-image: url('../image/role/t_chuang.png');
+}
+.rolepic[_char="ming"]{
+    background-image: url('../image/role/t_huei.png');
+}
+.rolepic[_char="fa"]{
+    background-image: url('../image/role/t_han.png');
+}
+.rolepic[_char="yinyang"]{
+    background-image: url('../image/role/t_zo.png');
+}
+.rolepic[_char="huang"]{
+    background-image: url('../image/role/w_huang.jpg');
 }
 .mainpic{
     background-image:url('../image/role/w_main.jpg');
-    top:-100%;
-    visibility: hidden;
+    opacity: 0;
     margin-left:0; 
     z-index: 0;
     width: 1000px;
-    -webkit-transition: none;
-    transition: none;
+    -webkit-transition: opacity 0.8s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
 }
 
 

@@ -88,8 +88,15 @@
 
     <div class="row bg">
         <div class="mask"></div>
-        <div id="rolepic" class="rolepic"></div>
+        <div class="rolepic" _char="ru"></div>
+        <div class="rolepic" _char="dao"></div>
+        <div class="rolepic" _char="mo"></div>
+        <div class="rolepic" _char="ming"></div>
+        <div class="rolepic" _char="fa"></div>
+        <div class="rolepic" _char="yinyang"></div>
+        <div class="rolepic" _char="huang"></div>
         <div id="mainpic" class="mainpic"></div>
+
         <div id="rolepanel" class="rolepanel">
             <p align="center"><a style="color: #8B4726;font-size:20px; font-weight:bold; ">配角</a></p>
             <p align="center"><div style="border-bottom: 1px solid #8B7765; width: 80px; margin-left: 20px; "></div></p>
@@ -103,10 +110,10 @@
         <div class="bottom decobar"></div>
         <div class="title"></div>
         <div id="voice" class="voice">
-            <a role="button" href="#" onclick="autoPlay('r1')" class="voice-btn btna">配音試聽一</a>
-            <audio id="r1" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
-            <a role="button" href="#" onclick="autoPlay('r2')" class="voice-btn btna">配音試聽二</a>
-            <audio id="r2" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
+            <a role="button" href="#" onclick="autoPlay(1)" class="voice-btn btna">配音試聽一</a>
+            <audio id="audiovoice" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
+            <a role="button" href="#" onclick="autoPlay(2)" class="voice-btn btna">配音試聽二</a>
+            
             <!--<div class="" style="display: inline;margin-left:40px;">
                 <a role="button" href="#" class="voice2-btn btna">配音試聽</a>
             </div>-->
@@ -210,201 +217,52 @@
             'zoyan':'image/role/t_zoyan.png',
             'huang':'image/role/w_huang.jpg'
         };
+        var voice={
+            'ru':'music/role/ru.mp3',
+            'mo':'music/role/mo.mp3',
+            'dao':'music/role/dao.mp3',
+            'ming':'music/role/ming.mp3',
+            'fa':'music/role/fa.mp3',
+            'yinyang':'music/role/yinyang.mp3',
+            'zhujue':'',
+            'xunzi':'',
+            'zoyan':'',
+            'huang':''
+        }
 
         function charClick( _char ){
+            console.log(_char);
+            
             $('.role-btn').removeClass('active').promise()
             .done(function(){
                 $('.role-btn.'+_char).addClass('active');
             });
 
-            if (_char=='zhujue'){
-                $('.rolepic').css('visibility','hidden');
-                $('.mainpic').css('visibility','visible');
-            }else{
-                $('.rolepic').css('visibility','visible');
-                $('.mainpic').css('visibility','hidden');
-                if (_char=='peijue'){
-                    _char='huang';
+            $('.rolepic').css('opacity',0).promise()
+            .done(function(){
+                if (_char=='zhujue'){
+                    $('.mainpic').css('opacity',1.0);
+                }else{
+                    if (_char=='peijue'){
+                        _char='huang';
+                    }
+                    $('.mainpic').css('opacity',0);
+                    $('.rolepic[_char="'+_char +'"]').css('opacity',1);                
                 }
-                $('.rolepic').attr('_char', _char);
-                $('.rolepic').css('background-image','url('+ picurl[_char] + ')');        
-            }
-            selected.character = _char;
+            });
             
+            //document.getElementById("r1").setAttribute('src', 'music/role/fa.mp3');
+            selected.character = _char;
+            console.log(1);
         }
 
-        function showImg(id) { 
-            switch (id) {
-                case c1:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/k_kong.png')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c1")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b1")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/ru.mp3');
-                    clickid = "c1";
-                    clickbtnid = "b1";
-                    break;
-                case c2:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_mo.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c2")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b2")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/mo.mp3');
-                    clickid = "c2";
-                    clickbtnid = "b2";
-                    break;
-                case c3:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_chuang.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c3")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b3")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/dao.mp3');
-                    clickid = "c3";
-                    clickbtnid = "b3";
-                    break;
-                case c4:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_huei.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c4")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b4")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/ming.mp3');
-                    clickid = "c4";
-                    clickbtnid = "b4";
-                    break;
-                case c5:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_han.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c5")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b5")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/fa.mp3');
-                    clickid = "c5";
-                    clickbtnid = "b5";
-
-                    break;
-                case c6:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_zo.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "5%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "visible";
-                    if (lastclickid != "c6")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b6")
-                        btnhide(lastclickbtnid);
-                    document.getElementById("r1").setAttribute('src', 'music/role/yinyang.mp3');
-                    clickid = "c6";
-                    clickbtnid = "b6";
-                    break;
-                case c7:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_main.jpg')";
-                    document.getElementById("rolepic").style.width = "950px";
-                    document.getElementById("rolepic").style.marginLeft = "0%";
-                    document.getElementById("rolepanel").style.visibility = "hidden";
-                    document.getElementById("voice").style.visibility = "hidden";
-                    if (lastclickid != "c7")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b7")
-                        btnhide(lastclickbtnid);
-                    clickid = "c7";
-                    clickbtnid = "b7";
-
-                    break;
-                case c8:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_huang.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "15%";
-                    document.getElementById("rolepanel").style.visibility = "visible";
-                    document.getElementById("voice").style.visibility = "hidden";
-                    if (lastclickid != "c8")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b8")
-                        btnhide(lastclickbtnid);
-                    clickid = "c8";
-                    clickbtnid = "b8";
-                    document.getElementById("peia1").focus();
-                    break;
-
-                case "pei1":
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_huang.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "15%";
-                    document.getElementById("rolepanel").style.visibility = "visible";
-                    if (lastclickid != "c8")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b8")
-                        btnhide(lastclickbtnid);
-
-                    document.getElementById("pei1").className = "littlecircle";
-                    document.getElementById("pei2").className = "nonecircle";
-                    document.getElementById("pei3").className = "nonecircle";
-                    clickid = "c8";
-                    clickbtnid = "b8";
-                    break;
-                case "pei2":
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_zo.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "15%";
-                    document.getElementById("rolepanel").style.visibility = "visible";
-                    if (lastclickid != "c8")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b8")
-                        btnhide(lastclickbtnid);
-
-                    document.getElementById("pei1").className = "nonecircle";
-                    document.getElementById("pei2").className = "littlecircle";
-                    document.getElementById("pei3").className = "nonecircle";
-                    clickid = "c8";
-                    clickbtnid = "b8";
-                    break;
-                case "pei3":
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_han.jpg')";
-                    document.getElementById("rolepic").style.width = "880px";
-                    document.getElementById("rolepic").style.marginLeft = "15%";
-                    document.getElementById("rolepanel").style.visibility = "visible";
-                    if (lastclickid != "c8")
-                        document.getElementById(lastclickid).style.visibility = "hidden";
-                    if (lastclickbtnid != "b8")
-                        btnhide(lastclickbtnid);
-
-                    document.getElementById("pei1").className = "nonecircle";
-                    document.getElementById("pei2").className = "nonecircle";
-                    document.getElementById("pei3").className = "littlecircle";
-                    clickid = "c8";
-                    clickbtnid = "b8";
-                    break;
-            }
-
-        }
 
         function autoPlay(id) {
-            var myAuto = document.getElementById(id);
-            myAuto.play();
-            myAuto.loop = false;
+            $('#audiovoice').attr('src',voice[selected.character]).promise()
+            .done(function(){
+                 $(this)[0].play(); 
+                 $(this)[0].loop = false;  
+            });
         }
 
 
