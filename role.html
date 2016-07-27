@@ -17,14 +17,14 @@
     <script type="text/javascript" src="js/lib/jquery.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
 
-    <link rel="prefetch" href="image/role/w_kong.jpg" />
-    <link rel="prefetch" href="image/role/w_mo.jpg" />
-    <link rel="prefetch" href="image/role/w_chuang.jpg" />
-    <link rel="prefetch" href="image/role/w_huei.jpg" />
-    <link rel="prefetch" href="image/role/w_han.jpg" />
-    <link rel="prefetch" href="image/role/w_zo.jpg" />
+    <link rel="prefetch" href="image/role/t_kong.png" />
+    <link rel="prefetch" href="image/role/t_mo.png" />
+    <link rel="prefetch" href="image/role/t_chuang.png" />
+    <link rel="prefetch" href="image/role/t_huei.png" />
+    <link rel="prefetch" href="image/role/t_han.png" />
+    <link rel="prefetch" href="image/role/t_zo.png" />
     <link rel="prefetch" href="image/role/w_main.jpg" />
-    <link rel="prefetch" href="image/role/w_huang.jpg" />
+    <link rel="prefetch" href="image/role/t_huang.png" />
 
     <link rel="prefetch" href="image/role/dao.mp3" />
     <link rel="prefetch" href="image/role/fa.mp3" />
@@ -87,7 +87,9 @@
 
 
     <div class="row bg">
+        <div class="mask"></div>
         <div id="rolepic" class="rolepic"></div>
+        <div id="mainpic" class="mainpic"></div>
         <div id="rolepanel" class="rolepanel">
             <p align="center"><a style="color: #8B4726;font-size:20px; font-weight:bold; ">配角</a></p>
             <p align="center"><div style="border-bottom: 1px solid #8B7765; width: 80px; margin-left: 20px; "></div></p>
@@ -95,16 +97,16 @@
             <div align="center" style="margin-top:10px"><img id="pei2" class="nonecircle" src="image/tran.png" /><a class="pei" href="#" onclick="showImg('pei2')"> 鄒衍</a></div>
             <div align="center" style="margin-top:10px"><img id="pei3" class="nonecircle" src="image/tran.png" /><a class="pei" href="#" onclick="showImg('pei3')"> 荀况</a></div>
         </div>
-        <div class="mask"></div>
+        
         <div class="mark"></div>
         <div class="top decobar"></div>
         <div class="bottom decobar"></div>
         <div class="title"></div>
         <div id="voice" class="voice">
-            <div class="" style="display: inline; margin-left: 90px; ">
-                <a role="button" href="#" onclick="autoPlay('r1')" class="voice-btn btna">配音試聽</a>
-                <audio id="r1" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
-            </div>
+            <a role="button" href="#" onclick="autoPlay('r1')" class="voice-btn btna">配音試聽一</a>
+            <audio id="r1" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
+            <a role="button" href="#" onclick="autoPlay('r2')" class="voice-btn btna">配音試聽二</a>
+            <audio id="r2" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
             <!--<div class="" style="display: inline;margin-left:40px;">
                 <a role="button" href="#" class="voice2-btn btna">配音試聽</a>
             </div>-->
@@ -115,31 +117,47 @@
     <div>
         <div class="row">
             <div class="col-md-8">
-                <div class="btn-group" style="margin-top: 10px; display: inline;">
-                    <a id="c1" onclick="showImg(c1)" onmouseover="show('c1','b1')" onmouseout="hide('c1','b1')" class="circle2" role="button" href="#"></a>
-                    <a id="b1" onclick="showImg(c1)" onmouseover="show('c1','b1')" onmouseout="hide('c1','b1')" class="role-btn-ru" role="button" href="#"></a>
+                <div class="role-btn-group">
+                    <div class="role-btn ru col-md-1" _char="ru">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
 
-                    <a id="c2" onclick="showImg(c2)"  onmouseover="show('c2','b2')" onmouseout="hide('c2','b2')" class="circle" role="button" href="#"></a>
-                    <a id="b2" onclick="showImg(c2)" onmouseover="show('c2','b2')" onmouseout="hide('c2','b2')" class="role-btn-mo" role="button" href="#"></a>
-                    
-                    <a id="c3" onclick="showImg(c3)" onmouseover="show('c3','b3')" onmouseout="hide('c3','b3')" class="circle" role="button" href="#"></a>
-                    <a id="b3" onclick="showImg(c3)" onmouseover="show('c3','b3')" onmouseout="hide('c3','b3')" class="role-btn-dao" role="button" href="#"></a>
-                    
-                    <a id="c4" onclick="showImg(c4)" onmouseover="show('c4','b4')" onmouseout="hide('c4','b4')" class="circle" role="button" href="#"></a>
-                    <a id="b4" onclick="showImg(c4)" onmouseover="show('c4','b4')" onmouseout="hide('c4','b4')" class="role-btn-ming" role="button" href="#"></a>
-                    
-                    <a id="c5" onclick="showImg(c5)" onmouseover="show('c5','b5')" onmouseout="hide('c5','b5')" class="circle" role="button" href="#"></a>
-                    <a id="b5" onclick="showImg(c5)" onmouseover="show('c5','b5')" onmouseout="hide('c5','b5')" class="role-btn-fa" role="button" href="#"></a>
-                   
-                    <a id="c6" onclick="showImg(c6)" onmouseover="show('c6','b6')" onmouseout="hide('c6','b6')" class="circle6" role="button" href="#"></a>
-                    <a id="b6" onclick="showImg(c6)" onmouseover="show('c6','b6')" onmouseout="hide('c6','b6')" class="role-btn-yinyang" role="button" href="#"></a>
-                    
-                    <a id="c7" onclick="showImg(c7)" onmouseover="show('c7','b7')" onmouseout="hide('c7','b7')" class="circle4" role="button" href="#"></a>
-                    <a id="b7" onclick="showImg(c7)" onmouseover="show('c7','b7')" onmouseout="hide('c7','b7')" class="role-btn-zhujue" role="button" href="#"></a>
-                    
-                    <a id="c8" onclick="showImg(c8)" onmouseover="show('c8','b8')" onmouseout="hide('c8','b8')" class="circle5" role="button" href="#"></a>
-                    <a id="b8" onclick="showImg(c8)" onmouseover="show('c8','b8')" onmouseout="hide('c8','b8')" class="role-btn-peijue" role="button" href="#"></a>
-                    
+                    <div class="role-btn mo col-md-1" _char="mo">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn dao col-md-1" _char="dao">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn ming col-md-1" _char="ming">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn fa col-md-1" _char="fa">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn yinyang col-md-1" _char="yinyang">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn zhujue col-md-1" _char="zhujue">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+
+                    <div class="role-btn peijue col-md-1" _char="peijue">
+                        <div class="btn"></div>
+                        <span class="circle"></span>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
                 
             </div>
@@ -163,56 +181,62 @@
 
 </div>
     <script type="text/javascript">
-        var clickid = "c1";
+        /*var clickid = "c1";
         var clickbtnid = "b1";
         var lastclickid = "c1";
-        var lastclickbtnid = "b1";
-        function show(id, btnid) {
-            document.getElementById(id).style.visibility = "visible";
-            switch (btnid) {
-                case "b1":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-ru.png')";
-                    break;
-                case "b2":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-mo.png')";
-                    break;
-                case "b3":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-dao.png')";
-                    break;
-                case "b4":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-ming.png')";
-                    break;
-                case "b5":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-fa.png')";
-                    break;
-                case "b6":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-yinyang.png')";
-                    break;
-                case "b7":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-zhu.png')";
-                    break;
-                case "b8":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-pei.png')";
-                    break;
+        var lastclickbtnid = "b1";*/
+        var selected = (function(){
+            this.character = 'ru';
+            return this;
+        })();
+
+        $(document).ready(function(){
+            $('.role-btn').click(function(){
+                var character = $(this).attr('_char');
+                charClick(character);
+            });
+            charClick(selected.character);
+        });
+
+        var picurl={
+            'ru':'image/role/t_kong.png',
+            'mo':'image/role/t_mo.png',
+            'dao':'image/role/t_chuang.png',
+            'ming':'image/role/t_huei.png',
+            'fa':'image/role/t_han.png',
+            'yinyang':'image/role/t_zo.png',
+            'zhujue':'image/role/w_main.jpg',
+            'xunzi':'image/role/t_xunzi.png',
+            'zoyan':'image/role/t_zoyan.png',
+            'huang':'image/role/w_huang.jpg'
+        };
+
+        function charClick( _char ){
+            $('.role-btn').removeClass('active').promise()
+            .done(function(){
+                $('.role-btn.'+_char).addClass('active');
+            });
+
+            if (_char=='zhujue'){
+                $('.rolepic').css('visibility','hidden');
+                $('.mainpic').css('visibility','visible');
+            }else{
+                $('.rolepic').css('visibility','visible');
+                $('.mainpic').css('visibility','hidden');
+                if (_char=='peijue'){
+                    _char='huang';
+                }
+                $('.rolepic').attr('_char', _char);
+                $('.rolepic').css('background-image','url('+ picurl[_char] + ')');        
             }
-        }
-        function hide(id, btnid) {
-            //alert(clickid);
-
-            if (id != clickid) {
-                document.getElementById(id).style.visibility = "hidden";
-                btnhide(btnid);
-            } else {
-                lastclickid = id;
-                lastclickbtnid = btnid;
-            }
-
+            selected.character = _char;
+            
         }
 
-        function showImg(id) {
+        function showImg(id) { 
             switch (id) {
                 case c1:
-                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/w_kong.jpg')";
+                    document.getElementById("rolepic").style.backgroundImage = "url('image/role/k_kong.png')";
                     document.getElementById("rolepic").style.width = "880px";
                     document.getElementById("rolepic").style.marginLeft = "5%";
                     document.getElementById("rolepanel").style.visibility = "hidden";
@@ -372,36 +396,6 @@
                     document.getElementById("pei3").className = "littlecircle";
                     clickid = "c8";
                     clickbtnid = "b8";
-                    break;
-            }
-
-        }
-
-        function btnhide(btnid) {
-            switch (btnid) {
-                case "b1":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-ru-un.png')";
-                    break;
-                case "b2":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-mo-un.png')";
-                    break;
-                case "b3":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-dao-un.png')";
-                    break;
-                case "b4":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-ming-un.png')";
-                    break;
-                case "b5":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-fa-un.png')";
-                    break;
-                case "b6":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-yinyang-un.png')";
-                    break;
-                case "b7":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-zhu-un.png')";
-                    break;
-                case "b8":
-                    document.getElementById(btnid).style.backgroundImage = "url('image/role/btn-pei-un.png')";
                     break;
             }
 

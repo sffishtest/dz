@@ -9,6 +9,7 @@
 
 body {
     background-image: url('../image/pt02.png');
+    background-color: #efece4;
     overflow-x: hidden;
 }
 
@@ -29,9 +30,10 @@ nav {
     position: relative;
     z-index: 10;
     background-image: url('../image/pt02.png');
-    min-height: 45px;
+    /*background-color: #425a65 !important;*/
+    min-height: 42px;
     width: 100%;
-    padding: 8px 15px 8px 15px;
+    padding: 5px 15px 5px 15px;
     -webkit-box-shadow: 0px 3px 5px 0px rgba(102,102,102,0.5);
     -moz-box-shadow: 0px 3px 5px 0px rgba(102,102,102,0.5);
     box-shadow: 0px 3px 5px 0px rgba(102,102,102,0.5);
@@ -41,7 +43,7 @@ nav .smalltitle {
     background-image: url('../image/smalltitle.png');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 30px;
+    height: 33px;
     width: 150px;
     display: inline-block;
 }
@@ -96,6 +98,8 @@ nav .smalltitle {
     z-index:-800;
 }
 .bg .mask{
+    position: absolute;
+    z-index: 0;
     width: 100%;
     height: 580px;
     background-image: url('../image/whitemask.png');
@@ -127,6 +131,7 @@ nav .smalltitle {
 }
 
 .bg .decobar {
+    z-index: 3;
     position: absolute;
     height:35px;
     width: 100%;
@@ -144,13 +149,14 @@ nav .smalltitle {
 }
 
 .bg .title{
+    z-index: 2;
     height: 250px;
     width: 420px;
     background-image:url('../image/title.png');
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    right: 3em;
+    right: 5em;
     bottom: 1em;
 }
 
@@ -237,32 +243,28 @@ nav .smalltitle {
 
 
 .voice {
-    height: 50px;
-    width: 520px;
-    background-repeat: no-repeat;
-    background-size: contain;
     position: absolute;
-    right: 0em;
-    bottom: 10em;
+    right: 9em;
+    bottom: 8em;
 }
 
 .voice-btn {
-    -moz-box-shadow: 1px -1px 20px -7px #000;
-    -webkit-box-shadow: 1px -1px 20px -7px #000;
-    box-shadow: 1px -1px 20px -7px #000;
+    -moz-box-shadow: 1px -1px 20px -7px #333;
+    -webkit-box-shadow: 1px -1px 20px -7px #333;
+    box-shadow: 1px -1px 20px -7px #333;
     background-color: #494937;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
     display: inline-block;
     cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
+    color: #eeeeee;
+    font-size: 1.2em;
+    font-weight: normal;
     padding: 10px 30px;
     text-decoration: none;
     text-shadow: 0px -1px 1px #000;
+    margin-right: 1em;
 }
 
 .voice-btn:hover {
@@ -327,12 +329,16 @@ nav .navbar-right{
 .navlist li:hover a{
     color: #60a8a6;
     text-decoration: none;
+    border-top: 5px solid #60a8a6
 }
 .navlist li:hover .navimg{
-    visibility: visible;
+    /*visibility: visible;*/
 }
 
 .navlist a {
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     color: #494937;
 }
 
@@ -373,19 +379,17 @@ nav .navbar-right{
 .button-block .btn {
     float: right;
     margin-right: 1em;
-    -moz-box-shadow: 1px -1px 20px -7px #000;
-    -webkit-box-shadow: 1px -1px 20px -7px #000;
-    box-shadow: 1px -1px 20px -7px #000;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    border:2px solid #eee;
+    -moz-box-shadow: 1px -1px 20px -7px #333;
+    -webkit-box-shadow: 1px -1px 20px -7px #333;
+    box-shadow: 1px -1px 20px -7px #333;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
     font-family: Arial;
     font-size: 20px;
-    font-weight: bold;
     padding: 10px 2.1em;
     text-shadow: 0px -1px 1px #000;
 }
@@ -506,21 +510,42 @@ nav .navbar-right{
 }
 .role .bg .title {
     height: 200px;
-    width: 320px;
+    width: 290px;
     background-image: url('../image/title.png');
-    right: 15em;
-    bottom: 15em;
+    right: 10em;
+    bottom: 11em;
+    opacity: 0.3;
 }
 
-.rolepic {
+.role .bg .mask{
+    z-index: 0;
+}
+
+.rolepic, .mainpic{
+    z-index: 1;
     position: relative;
-    width: 880px;
+    width: 1000px;
     height: 580px;
-    background-image: url('../image/role/w_kong.jpg');
-    background-size: cover;
+    /*background-image: url('../image/role/t_kong.png');*/
+    background-size: contain;
     margin-left: 5%;
     margin-right: 0;
+    background-repeat: no-repeat;
+
+    -webkit-transition: background-image 0.8s ease-in-out;
+    transition: background-image 0.8s ease-in-out;
 }
+.mainpic{
+    background-image:url('../image/role/w_main.jpg');
+    top:-100%;
+    visibility: hidden;
+    margin-left:0; 
+    z-index: 0;
+    width: 1000px;
+    -webkit-transition: none;
+    transition: none;
+}
+
 
 .rolepanel {
     position: absolute;
@@ -534,147 +559,104 @@ nav .navbar-right{
     visibility:hidden;
 }
 
-.role-btn-ru {
-    background-image: url('../image/role/btn-ru.png');
+.role-btn-group{
+    padding-left: 5em;
+    padding-top: 0.8em;
+}
+.role-btn{
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    margin-left: 0.8em;
+}
+.role-btn .btn{
+    padding: 0.3em;
     background-repeat: no-repeat;
     background-size: contain;
     height: 60px;
     width: 67px;
-    margin-left: -80px;
-    display: inline-block;
+    opacity: 0.6;
+    background-color:transparent;
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    -ms-transition: opacity .3s ease-out;
+    -o-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
 }
-
-.role-btn-mo {
-    background-image: url('../image/role/btn-mo-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 67px;
-    margin-left: -80px;
-    display: inline-block;
-}
-
-.role-btn-dao {
-    background-image: url('../image/role/btn-dao-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 67px;
-    margin-left: -80px;
-    display: inline-block;
-}
-
-.role-btn-ming {
-    background-image: url('../image/role/btn-ming-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 67px;
-    margin-left: -80px;
-    display: inline-block;
-}
-
-.role-btn-fa {
-    background-image: url('../image/role/btn-fa-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 67px;
-    margin-left: -80px;
-    display: inline-block;
-}
-
-.role-btn-yinyang {
-    background-image: url('../image/role/btn-yinyang-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 87px;
-    margin-left: -97px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.role-btn-zhujue {
-    background-image: url('../image/role/btn-zhu-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 87px;
-    margin-left: -97px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.role-btn-peijue {
-    background-image: url('../image/role/btn-pei-un.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 60px;
-    width: 87px;
-    margin-left: -97px;
-    margin-top: 20px;
-    display: inline-block;
-}
-
-.circle {
+.role-btn .circle{
     background-image: url('../image/circle.svg');
     background-repeat: no-repeat;
     background-size: contain;
     height: 70px;
-    width: 77px;
-    margin-left: 20px;
-    margin-bottom: -5px;
+    width: 100%;
     display: inline-block;
-    visibility:hidden;
+    position: absolute;
+    top:-5px;
+    left:0;
+    opacity: 0;
+
+    -webkit-transition: opacity .5s ease-in;
+    -moz-transition: opacity .5s ease-in;
+    -ms-transition: opacity .5s ease-in;
+    -o-transition: opacity .5s ease-in;
+    transition: opacity .5s ease-in;
+
+    -webkit-transition: transform .15s ease-in-out;
+    -moz-transition: transform .15s ease-in-out;
+    -ms-transition: transform .15s ease-in-out;
+    -o-transition: transform .15s ease-in-out;
+    transition: transform .15s ease-in-out;
 }
-.circle2 {
-    background-image: url('../image/circle.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 70px;
-    width: 77px;
-    margin-left: 20px;
-    margin-bottom: -5px;
-    display: inline-block;
+.role-btn.active .btn,
+.role-btn:hover .btn,
+.role-btn:active .btn,
+.role-btn:focus .btn{
+    background-color:transparent;
+    opacity: 1;
+    box-shadow: none; 
+}
+.role-btn.active .circle,
+.role-btn:hover .circle,
+.role-btn:active .circle,
+.role-btn:focus .circle{
+    opacity: 0;
+}
+.role-btn.active .circle{
+    transform: rotate(20deg);
+    opacity: 1;
 }
 
+    .role-btn.ru .btn{
+        background-image: url('../image/role/btn-ru.png');   
+    }
 
-.circle4 {
-    background-image: url('../image/circle.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 70px;
-    width: 87px;
-    margin-left: 5px;
-    margin-bottom: -5px;
-    display: inline-block;
-    visibility: hidden;
-}
+    .role-btn.mo .btn{
+        background-image: url('../image/role/btn-mo.png');
+    }
 
-.circle5 {
-    background-image: url('../image/circle.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 70px;
-    width: 87px;
-    margin-left: 5px;
-    margin-bottom: -5px;
-    display: inline-block;
-    visibility: hidden;
-}
+    .role-btn.dao .btn{
+        background-image: url('../image/role/btn-dao.png');
+    }
 
-.circle6 {
-    background-image: url('../image/circle.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 70px;
-    width: 87px;
-    margin-left: 20px;
-    margin-bottom: -5px;
-    display: inline-block;
-    visibility: hidden;
-}
+    .role-btn.ming .btn{
+        background-image: url('../image/role/btn-ming.png');
+    }
+
+    .role-btn.fa .btn{
+        background-image: url('../image/role/btn-fa.png');
+    }
+
+    .role-btn.yinyang .btn{
+        background-image: url('../image/role/btn-yinyang.png');
+    }
+
+    .role-btn.zhujue .btn{
+        background-image: url('../image/role/btn-zhu.png');
+    }
+
+    .role-btn.peijue .btn{
+        background-image: url('../image/role/btn-pei.png');
+    }
 
 .littlecircle {
     background-image: url('../image/circle.svg');
@@ -689,16 +671,6 @@ nav .navbar-right{
     height: 15px;
     width: 15px;
     margin-left: -20px;
-}
-
-.voice {
-    height: 50px;
-    width: 520px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    right: 0em;
-    bottom: 10em;
 }
 
 .pei {
