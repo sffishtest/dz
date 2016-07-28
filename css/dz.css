@@ -48,6 +48,10 @@ nav .smalltitle {
     display: inline-block;
 }
 
+.inline-block{
+    display: inline-block !important;
+}
+
 .text-dark {
     color: #494937;
 }
@@ -56,6 +60,9 @@ nav .smalltitle {
     position: relative;
     width: 100%;
     display: block;
+}
+p.first-cap::first-letter { 
+    font-size: 200%;
 }
 
 .p-l-0{
@@ -737,7 +744,19 @@ nav .navbar-right{
     color:#66664d;
 }
 
+/* story */
+.story .bg{
+    background-color: #eee;
+    height: auto;
 
+}
+.story .inner-container{
+    background-color: #eee;
+    padding-top: 6em;
+    padding-bottom: 6em;
+    height: auto;
+    opacity: 0.9;
+}
 
 @media screen and (max-width: 970px) { /* sm */
     ul.navlist{
