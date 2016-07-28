@@ -118,6 +118,16 @@ p.first-cap::first-letter {
     padding-top: 30px;
 }
 
+
+.m-b-10{
+    margin-bottom: 10px;
+}
+.m-b-20{
+    margin-bottom: 20px;
+}
+.m-b-30{
+    margin-bottom: 30px;
+}
 .m-t-10{
     margin-top: 10px;
 }
