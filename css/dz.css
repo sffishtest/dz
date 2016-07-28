@@ -418,6 +418,10 @@ nav .navbar-right{
     z-index:2;
 }
 
+.inner-container img{
+    width: 100%;
+}
+
 .button-block{
     z-index: 10;
 }
@@ -775,8 +779,14 @@ nav .navbar-right{
 .story .bg, .download .bg{
     background-color: #eee;
     height: auto;
-
 }
+
+.system .bg, .media .bg{
+    background-color: #eee;
+    height: auto;
+    background-image: none;   
+}
+
 .story .inner-container, .download .inner-container{
     background-color: #eee;
     padding-top: 6em;
