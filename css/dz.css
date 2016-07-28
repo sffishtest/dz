@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
 * {
    color: black;
    margin: 0;
@@ -46,6 +52,17 @@ nav .smalltitle {
     height: 33px;
     width: 150px;
     display: inline-block;
+}
+
+ul.list{
+     list-style:none;
+}
+ul.list li:before{
+    font-family: 'Glyphicons Halflings';
+    vertical-align: middle;
+    font-size: 1.2em;
+    content: "\e131 ";
+    padding-right: 0.5em;
 }
 
 .inline-block{
@@ -745,12 +762,12 @@ nav .navbar-right{
 }
 
 /* story */
-.story .bg{
+.story .bg, .download .bg{
     background-color: #eee;
     height: auto;
 
 }
-.story .inner-container{
+.story .inner-container, .download .inner-container{
     background-color: #eee;
     padding-top: 6em;
     padding-bottom: 6em;
