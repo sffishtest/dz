@@ -213,7 +213,7 @@ dl.news dt{
     padding-top: 0;
     z-index: 0;
     top:4.5em;
-    left: 29em;
+    left: 27%;
     height: 350px;
     width:200px;
     margin:0;
@@ -270,11 +270,14 @@ dl.news dt{
 
 
 .voice {
-    position: absolute;
-    right: 9em;
-    bottom: 8em;
+    height: 100%;  
     vertical-align: middle;
     z-index: 100;
+}
+
+.voice a.voice-btn{
+    position: absolute;
+    bottom: 3.5em;
 }
 
 .voice a.voice-btn, .voice a.voice-btn:visited {
@@ -291,10 +294,12 @@ dl.news dt{
     font-size: 1.2em;
     font-weight: normal;
     padding: 10px 20px;
-    top:0;
     text-decoration: none;
     text-shadow: 0px -1px 1px #000;
-    margin-right: 6em;
+}
+.voice a.voice-btn span {
+    color: #eeeeee;
+    display: inline !important;
 }
 
 .voice a.voice-btn i{
@@ -434,90 +439,7 @@ nav .navbar-right{
     right: 0;
 }
 
-@media screen and (max-width: 970px) { /* sm */
-    .navlist li{
-        padding-left: 25px;        
-    }
-    .button-block{
-        
-        text-align: center;
-    }
-    .button-block .btn{
-        border: 2px solid #EEE;
-        margin-left: 1.5em; 
-    }
 
-    .bg{
-        background-position: 20% 0;
-    }
-    .bg .slogan{
-        margin-top: 0;
-        padding-top: 7em;
-        padding-right: 3em;   
-    }
-    .bg .mask{
-        background-position: 70% 0;
-    }
-    .bg .title{
-        background-position: 40% 0;
-        
-        height: 38%;
-        margin-bottom: 2em;
-    }
-}
-
-@media screen and (max-width: 767px) { /* xs */
-    
-    nav .navlist li, nav .navlist li:first-child{
-        width: 25%;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: center;
-        padding-left:0;
-    }
-    nav .navimg{
-        margin-left: 10px;
-    }
-    nav .navbar-right{
-        background: #eee;
-        width: 100%;
-        margin-top: 0.5em;
-    }
-    .button-block{
-        padding-top: 16em;
-        padding-right: 0;
-    }
-    .button-block .btn{
-        float: none;
-        width: 10em;
-        border: 2px solid #EEE;
-        margin-left:0; 
-        margin-bottom: 0.3em;
-        padding: 7px 1em;
-        text-align: center;
-    }
-    .bg{
-        background-position: 20% 0;
-    }
-    .bg .mask-xs{
-        display: block;        
-    }
-    .bg .mask, .bg .mark{
-        display: none;
-    }
-    .bg .slogan{
-        top:-70%;
-    }
-    .bg .slogan .des01,.bg .slogan .des02{
-        height:200px;
-    }
-    .bg .title{
-        background-position: 40% 0;
-        width: 80%;
-        height: 30%;
-        margin-bottom: 2em;
-    }
-}
 
 /* role */
 .role .bg{
@@ -525,11 +447,11 @@ nav .navbar-right{
 }
 .role .bg .title {
     height: 200px;
-    width: 290px;
+    width: 336px;
     background-image: url('../image/title.png');
     right: 10em;
-    bottom: 11em;
-    opacity: 0.3;
+    bottom: 9em;
+    opacity: 0.1;
     z-index: 0;
 }
 
@@ -592,8 +514,8 @@ nav .navbar-right{
 
 
 .rolepanel {
-    position: relative;
-    top: -195px;
+    position: absolute;
+    top: -135px;
     left: -25px;
     z-index: 5;
     background: #f5f5f5;
@@ -813,4 +735,97 @@ nav .navbar-right{
 }
 .footer strong, .footer a{
     color:#66664d;
+}
+
+
+
+@media screen and (max-width: 970px) { /* sm */
+    ul.navlist{
+        margin-right: 0 !important;
+    }
+    .navlist li{
+        padding-left: 25px;        
+    }
+    .button-block{
+        
+        text-align: center;
+    }
+    .button-block .btn{
+        margin-left: 1.5em; 
+    }
+
+    .bg{
+        background-position: 20% 0;
+    }
+    .bg .slogan{
+        margin-top: 0;
+        top: 6em;
+        left: 13em;   
+    }
+    .bg .mask{
+        background-position: 70% 0;
+    }
+    .bg .title{
+        background-position: 40% 0;
+        height: 38%;
+        margin-bottom: 1em;
+    }
+    .role-btn-group{
+        padding-left: 1em;
+    }
+}
+
+@media screen and (max-width: 767px) { /* xs */
+    
+    nav .navlist li, nav .navlist li:first-child{
+        width: 25%;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        padding-left:0;
+    }
+    nav .navimg{
+        margin-left: 10px;
+    }
+    nav .navbar-right{
+        position: relative;
+        background: transparent;
+        width: 100%;
+        margin-top: 3.2em;
+        
+    }
+    .button-block{
+        padding-top: 2em;
+        padding-right: 0;
+    }
+    .button-block .btn{
+        float: none;
+        width: 10em;
+        margin-left:0; 
+        margin-bottom: 0.3em;
+        padding: 7px 1em;
+        text-align: center;
+    }
+    .bg{
+        background-position: 20% 0;
+    }
+    .bg .mask-xs{
+        display: block;        
+    }
+    .bg .mask, .bg .mark{
+        display: none;
+    }
+    .bg .slogan{
+        top:-70%;
+    }
+    .bg .slogan .des01,.bg .slogan .des02{
+        height:200px;
+    }
+    .bg .title{
+        background-position: 40% 0;
+        width: 80%;
+        height: 38%;
+        left: 3em;
+        margin-bottom: 1em;
+    }
 }

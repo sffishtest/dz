@@ -25,15 +25,15 @@
     <link rel="prefetch" href="image/role/t_zo.png" />
     <link rel="prefetch" href="image/role/w_main.jpg" />
     <link rel="prefetch" href="image/role/t_huang.png" />
-    <link rel="prefetch" href="image/role/t_zhyan.png" />
+    <link rel="prefetch" href="image/role/t_zoyan.png" />
     <link rel="prefetch" href="image/role/t_xunzi.png" />
 
-    <link rel="prefetch" href="image/role/dao.mp3" />
-    <link rel="prefetch" href="image/role/fa.mp3" />
-    <link rel="prefetch" href="image/role/ming.mp3" />
-    <link rel="prefetch" href="image/role/mo.mp3" />
-    <link rel="prefetch" href="image/role/ru.mp3" />
-    <link rel="prefetch" href="image/role/yinyang.mp3" />
+    <link rel="prefetch" href="music/role/dao.mp3" />
+    <link rel="prefetch" href="music/role/fa.mp3" />
+    <link rel="prefetch" href="music/role/ming.mp3" />
+    <link rel="prefetch" href="music/role/mo.mp3" />
+    <link rel="prefetch" href="music/role/ru.mp3" />
+    <link rel="prefetch" href="music/role/yinyang.mp3" />
 </head>
 <body>
 <div class="container-fuild role">
@@ -105,9 +105,12 @@
         <div class="mark"></div>
         <div class="top decobar"></div>
         <div class="bottom decobar"></div>
-        <div class="title"></div>
-        <div id="voice" class="voice">
-            <a role="button" onclick="autoPlay()" class="voice-btn btna">配音試聽<i class="glyphicon glyphicon-volume-up"></i></a>
+        <div class="title visible-lg"></div>
+        <div class="voice col-md-2 col-md-offset-8">
+            <a role="button" onclick="autoPlay()" class="voice-btn">
+                <span class="visible-lg">配音試聽</span>
+                <i class="glyphicon glyphicon-volume-up"></i>
+            </a>
             <audio id="audiovoice" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
         </div>
 
@@ -115,7 +118,7 @@
     </div>
     <div>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 col-xs-12">
                 <div class="role-btn-group">
                     <div class="role-btn ru col-md-1" _char="ru">
                         <div class="btn"></div>
@@ -176,7 +179,7 @@
                 </div>
                 
             </div>
-            <div class="col-md-4 gamedesc">
+            <div class="col-xs-12 col-md-4 gamedesc ">
                 <p class="m-t-30 p-r-30 text-dark">
                     全年齡女性向戀愛冒險遊戲(AVG/ADV)，可攻略儒、墨、道、名、法、陰陽六家。試玩版二號一周目約一小時，包含共通線全部、六組CG、六種階段性小結局（前五家&Terrible End）
                 </p>
