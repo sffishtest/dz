@@ -48,7 +48,7 @@ nav .smalltitle {
     display: inline-block;
 }
 
-.textcloor {
+.text-dark {
     color: #494937;
 }
 
@@ -75,6 +75,19 @@ nav .smalltitle {
 }
 .p-r-20{
     padding-right: 20px;
+}
+.p-r-30{
+    padding-right: 30px;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t-20{
+    margin-top: 20px;
+}
+.m-t-30{
+    margin-top: 30px;
 }
 
 .bg {
@@ -246,9 +259,11 @@ nav .smalltitle {
     position: absolute;
     right: 9em;
     bottom: 8em;
+    vertical-align: middle;
+    z-index: 100;
 }
 
-.voice-btn {
+.voice a.voice-btn, .voice a.voice-btn:visited {
     -moz-box-shadow: 1px -1px 20px -7px #333;
     -webkit-box-shadow: 1px -1px 20px -7px #333;
     box-shadow: 1px -1px 20px -7px #333;
@@ -261,46 +276,29 @@ nav .smalltitle {
     color: #eeeeee;
     font-size: 1.2em;
     font-weight: normal;
-    padding: 10px 30px;
+    padding: 10px 20px;
+    top:0;
     text-decoration: none;
     text-shadow: 0px -1px 1px #000;
-    margin-right: 1em;
+    margin-right: 6em;
 }
 
-.voice-btn:hover {
-    background-color: #494937;
+.voice a.voice-btn i{
+    padding: 0 5px;
+    color: #eee;
+    font-size: 1.2em;
+    padding-left: 0.5em;
+    vertical-align: text-top;
+}
+.voice a.voice-btn:hover {
+    color: #fff;
+    background-color: #585842;
+    top:1px;
 }
 
-.voice-btn:active {
-    position: relative;
-    top: 1px;
-}
-
-.voice2-btn {
-    -moz-box-shadow: 1px -1px 20px -7px #000;
-    -webkit-box-shadow: 1px -1px 20px -7px #000;
-    box-shadow: 1px -1px 20px -7px #000;
-    background-color: #494937;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 30px;
-    margin-left: -15px;
-    text-decoration: none;
-    text-shadow: 0px -1px 1px #000;
-}
-
-.voice2-btn:hover {
-    background-color: #494937;
-}
-
-.voice2-btn:active {
+.voice a.voice-btn:active {
+    color: #fff;
+    background-color: #585842;
     position: relative;
     top: 1px;
 }
@@ -515,6 +513,7 @@ nav .navbar-right{
     right: 10em;
     bottom: 11em;
     opacity: 0.3;
+    z-index: 0;
 }
 
 .role .bg .mask{
@@ -558,6 +557,12 @@ nav .navbar-right{
 .rolepic[_char="huang"]{
     background-image: url('../image/role/w_huang.jpg');
 }
+.rolepic[_char="zoyan"]{
+    background-image: url('../image/role/t_zoyan.png');
+}
+.rolepic[_char="xunzi"]{
+    background-image: url('../image/role/t_xunzi.png');
+}
 .mainpic{
     background-image:url('../image/role/w_main.jpg');
     opacity: 0;
@@ -570,15 +575,64 @@ nav .navbar-right{
 
 
 .rolepanel {
-    position: absolute;
+    position: relative;
+    top: -195px;
+    left: -25px;
+    z-index: 5;
+    background: #f5f5f5;
     width: 120px;
-    height: 180px;
     background-size: cover;
+    padding: 15px 20px 15px 20px;
     margin-left: 5%;
     margin-right: 0;
-    margin-top: -30em;
     border: 1px solid #D4D4D4;
-    visibility:hidden;
+    text-align: center;
+    border-radius: 3px;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.role-btn[_char="peijue"]:hover .rolepanel{
+    opacity: 1.0;
+}
+
+.rolepanel a.pei{
+    font-size: 1.2em;   
+    line-height: 2em;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+
+.arrow:after {
+    background: #f5f5f5;
+    border: 1px solid #D4D4D4;
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    /*
+    -webkit-box-shadow: 6px 5px 9px -9px black,
+                      5px 6px 9px -9px black;
+    -moz-box-shadow: 6px 5px 9px -9px black,
+                   5px 6px 9px -9px black;
+    box-shadow: 6px 5px 9px -9px black,
+              5px 6px 9px -9px black;*/ 
+    -webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
 }
 
 .role-btn-group{
@@ -739,4 +793,7 @@ nav .navbar-right{
     width: 30px;
     margin-left: -5px;
     display: inline-block;
+}
+.footer strong, .footer a{
+    color:#66664d;
 }

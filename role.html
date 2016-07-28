@@ -25,6 +25,8 @@
     <link rel="prefetch" href="image/role/t_zo.png" />
     <link rel="prefetch" href="image/role/w_main.jpg" />
     <link rel="prefetch" href="image/role/t_huang.png" />
+    <link rel="prefetch" href="image/role/t_zhyan.png" />
+    <link rel="prefetch" href="image/role/t_xunzi.png" />
 
     <link rel="prefetch" href="image/role/dao.mp3" />
     <link rel="prefetch" href="image/role/fa.mp3" />
@@ -95,28 +97,18 @@
         <div class="rolepic" _char="fa"></div>
         <div class="rolepic" _char="yinyang"></div>
         <div class="rolepic" _char="huang"></div>
+        <div class="rolepic" _char="zoyan"></div>
+        <div class="rolepic" _char="xunzi"></div>
         <div id="mainpic" class="mainpic"></div>
 
-        <div id="rolepanel" class="rolepanel">
-            <p align="center"><a style="color: #8B4726;font-size:20px; font-weight:bold; ">配角</a></p>
-            <p align="center"><div style="border-bottom: 1px solid #8B7765; width: 80px; margin-left: 20px; "></div></p>
-            <div align="center" style="margin-top:10px"><img id="pei1" class="littlecircle" src="image/tran.png" /><a id="peia1" class="pei"  href="#" onclick="showImg('pei1')"> 黃歇</a></div>
-            <div align="center" style="margin-top:10px"><img id="pei2" class="nonecircle" src="image/tran.png" /><a class="pei" href="#" onclick="showImg('pei2')"> 鄒衍</a></div>
-            <div align="center" style="margin-top:10px"><img id="pei3" class="nonecircle" src="image/tran.png" /><a class="pei" href="#" onclick="showImg('pei3')"> 荀况</a></div>
-        </div>
         
         <div class="mark"></div>
         <div class="top decobar"></div>
         <div class="bottom decobar"></div>
         <div class="title"></div>
         <div id="voice" class="voice">
-            <a role="button" href="#" onclick="autoPlay(1)" class="voice-btn btna">配音試聽一</a>
+            <a role="button" onclick="autoPlay()" class="voice-btn btna">配音試聽<i class="glyphicon glyphicon-volume-up"></i></a>
             <audio id="audiovoice" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
-            <a role="button" href="#" onclick="autoPlay(2)" class="voice-btn btna">配音試聽二</a>
-            
-            <!--<div class="" style="display: inline;margin-left:40px;">
-                <a role="button" href="#" class="voice2-btn btna">配音試聽</a>
-            </div>-->
         </div>
 
 
@@ -163,19 +155,37 @@
                     <div class="role-btn peijue col-md-1" _char="peijue">
                         <div class="btn"></div>
                         <span class="circle"></span>
+                        <div id="rolepanel" class="rolepanel">    
+                            <div>
+                                
+                                <a class="pei"  onclick="charClick(event, 'huang')"> 黃歇</a>
+                            </div>
+                            <div>
+                                
+                                <a class="pei" onclick="charClick(event, 'xunzi')"> 荀子</a>
+                            </div>
+                            <div>
+                                
+                                <a class="pei" onclick="charClick(event, 'zoyan')"> 鄒衍</a>
+                            </div>
+
+                            <div class="arrow"></div>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 
             </div>
-            <div class="col-md-4">
-                <p style="margin-right: 30px; margin-top: 30px;">全年齡女性向戀愛冒險遊戲(AVG/ADV)，可攻略儒、墨、道、名、法、陰陽六家。試玩版二號一周目約一小時，包含共通線全部、六組CG、六種階段性小結局（前五家&Terrible End）</p>
+            <div class="col-md-4 gamedesc">
+                <p class="m-t-30 p-r-30 text-dark">
+                    全年齡女性向戀愛冒險遊戲(AVG/ADV)，可攻略儒、墨、道、名、法、陰陽六家。試玩版二號一周目約一小時，包含共通線全部、六組CG、六種階段性小結局（前五家&Terrible End）
+                </p>
             </div>
         </div>
-        <footer class="" ><!--style="position: absolute; left: 42%; bottom: 0; height: 40px; text-align: center; "-->
-            <div style="text-align:center;">
+        <footer class="row">
+            <div class="col-sm-12 text-center m-t-30">
 
-                <div class="btn-group">
+                <div class="btn-group footer">
                     <strong>版權所有© 2016 離水三尺工作室</strong>
                     <a class="social-btn-plurk" role="button" href="#"></a>
                     <a class="social-btn-sina" role="button" href="#"></a>
@@ -200,23 +210,11 @@
         $(document).ready(function(){
             $('.role-btn').click(function(){
                 var character = $(this).attr('_char');
-                charClick(character);
+                charClick(null, character);
             });
-            charClick(selected.character);
+            charClick(event, selected.character);
         });
 
-        var picurl={
-            'ru':'image/role/t_kong.png',
-            'mo':'image/role/t_mo.png',
-            'dao':'image/role/t_chuang.png',
-            'ming':'image/role/t_huei.png',
-            'fa':'image/role/t_han.png',
-            'yinyang':'image/role/t_zo.png',
-            'zhujue':'image/role/w_main.jpg',
-            'xunzi':'image/role/t_xunzi.png',
-            'zoyan':'image/role/t_zoyan.png',
-            'huang':'image/role/w_huang.jpg'
-        };
         var voice={
             'ru':'music/role/ru.mp3',
             'mo':'music/role/mo.mp3',
@@ -230,7 +228,7 @@
             'huang':''
         }
 
-        function charClick( _char ){
+        function charClick( event, _char ){
             console.log(_char);
             
             $('.role-btn').removeClass('active').promise()
@@ -239,25 +237,44 @@
             });
 
             $('.rolepic').css('opacity',0).promise()
-            .done(function(){
-                if (_char=='zhujue'){
-                    $('.mainpic').css('opacity',1.0);
-                }else{
-                    if (_char=='peijue'){
+            .done(function(){           
+                switch(_char){
+                    case 'ru':
+                    case 'mo':
+                    case 'dao':
+                    case 'ming':
+                    case 'fa':
+                    case 'yinyang':
+                        $('.voice').show();
+                        $('.mainpic').css('opacity',0);
+                        $('.rolepic[_char="'+_char +'"]').css('opacity',1);
+                        break;
+                    case 'peijue':
                         _char='huang';
-                    }
-                    $('.mainpic').css('opacity',0);
-                    $('.rolepic[_char="'+_char +'"]').css('opacity',1);                
-                }
+                    case 'huang':
+                    case 'xunzi':
+                    case 'zoyan':
+                        $('.voice').hide();
+                        $('.mainpic').css('opacity',0);
+                        $('.rolepic[_char="'+_char +'"]').css('opacity',1);
+                        break;
+                    case 'zhujue':
+                        $('.voice').hide();
+                        $('.rolepic').css('opacity',0);
+                        $('.mainpic').css('opacity',1.0);
+                        break;
+                    default:
+                        break;
+                };
+
             });
-            
-            //document.getElementById("r1").setAttribute('src', 'music/role/fa.mp3');
+            if (event) event.stopPropagation();
             selected.character = _char;
             console.log(1);
         }
 
 
-        function autoPlay(id) {
+        function autoPlay() {
             $('#audiovoice').attr('src',voice[selected.character]).promise()
             .done(function(){
                  $(this)[0].play(); 
