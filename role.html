@@ -206,14 +206,6 @@
             return this;
         })();
 
-        $(document).ready(function(){
-            $('.role-btn').click(function(event){
-                var character = $(this).attr('_char');
-                charClick(event, character);
-            });
-            charClick(null, selected.character);
-        });
-
         var voice={
             'ru':'music/role/ru.mp3',
             'mo':'music/role/mo.mp3',
@@ -226,6 +218,16 @@
             'zoyan':'',
             'huang':''
         }
+
+        function autoPlay() {
+            $('#audiovoice').attr('src',voice[selected.character]).promise()
+            .done(function(){
+                console.log(voice[selected.character]);
+                var _this = this;
+                $(_this)[0].play();
+                $(_this)[0].loop = false;
+            });
+        };
 
         function charClick( event, _char ){
             console.log(_char);
@@ -269,20 +271,15 @@
             });
             if (event) event.stopPropagation();
             selected.character = _char;
-            console.log(1);
-        }
+        };
 
-
-        function autoPlay() {
-            $('#audiovoice').attr('src',voice[selected.character]).promise()
-            .done(function(){
-                console.log(voice[selected.character]);
-                $(this)[0].play(); 
-                $(this)[0].loop = false;  
+        $(document).ready(function(){
+            $('.role-btn').click(function(event){
+                var character = $(this).attr('_char');
+                charClick(event, character);
             });
-        }
-
-
+            charClick(null, selected.character);
+        });
     </script>
 
  </body>
