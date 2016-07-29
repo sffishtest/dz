@@ -65,6 +65,18 @@ ul.list li:before{
     padding-right: 0.5em;
 }
 
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+}
+
 .inline-block{
     display: inline-block !important;
 }
@@ -128,14 +140,17 @@ p.first-cap::first-letter {
 .m-b-30{
     margin-bottom: 30px;
 }
+.m-t-0{
+    margin-top: 0 !important;
+}
 .m-t-10{
-    margin-top: 10px;
+    margin-top: 10px !important;
 }
 .m-t-20{
-    margin-top: 20px;
+    margin-top: 20px !important;
 }
 .m-t-30{
-    margin-top: 30px;
+    margin-top: 30px !important;
 }
 
 dl.news{
@@ -353,7 +368,6 @@ dl.news dt{
     color: #fff;
     background-color: #585842;
     position: relative;
-    top: 1px;
 }
 
 nav .navbar-right{
@@ -382,6 +396,11 @@ nav .navbar-right{
     text-decoration: none;
     border-top: 5px solid #60a8a6
 }
+.navlist li:hover a{
+    color: #AAA;
+    text-decoration: none;
+    border-top: 5px solid #AAA   
+}
 
 .navlist li:hover .navimg{
     /*visibility: visible;*/
@@ -396,6 +415,7 @@ nav .navbar-right{
 
 
 .navimg {
+    position: absolute;
     background-image: url('../image/underline.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -776,12 +796,12 @@ nav .navbar-right{
 }
 
 /* story */
-.story .bg, .download .bg{
+.story .bg, .download .bg,{
     background-color: #eee;
     height: auto;
 }
 
-.system .bg, .media .bg{
+.system .bg, .media .bg, .team .bg{
     background-color: #eee;
     height: auto;
     background-image: none;   
@@ -795,6 +815,25 @@ nav .navbar-right{
     opacity: 0.9;
 }
 
+.team h2{
+    border-left: 8px solid #494937; 
+    color: #494937; 
+    padding-left:10px; 
+    
+    padding-top: 3px;  
+    padding-bottom: 1px;
+}
+.team h3{
+    color: #494937; 
+    margin-top: 1.5em;
+}
+
+.team .dl-horizontal dt{
+    width: 5em;
+}   
+.team .dl-horizontal dd{
+    margin-left: 7em;
+}
 @media screen and (max-width: 970px) { /* sm */
     ul.navlist{
         margin-right: 0 !important;

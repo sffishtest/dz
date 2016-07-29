@@ -111,7 +111,7 @@
                 <span class="visible-lg">配音試聽</span>
                 <i class="glyphicon glyphicon-volume-up"></i>
             </a>
-            <audio id="audiovoice" src="music/role/ru.mp3" controls="controls" loop="false" hidden="true"></audio>
+            <audio id="audiovoice" src="" controls="controls" loop="false" hidden="true"></audio>
         </div>
 
 
@@ -276,8 +276,9 @@
         function autoPlay() {
             $('#audiovoice').attr('src',voice[selected.character]).promise()
             .done(function(){
-                 $(this)[0].play(); 
-                 $(this)[0].loop = false;  
+                console.log(voice[selected.character]);
+                $(this)[0].play(); 
+                $(this)[0].loop = false;  
             });
         }
 
