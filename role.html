@@ -222,7 +222,6 @@
         function autoPlay() {
             $('#audiovoice').attr('src',voice[selected.character]).promise()
             .done(function(){
-                console.log(voice[selected.character]);
                 var _this = this;
                 $(_this)[0].play();
                 $(_this)[0].loop = false;
@@ -230,7 +229,6 @@
         };
 
         function charClick( event, _char ){
-            console.log(_char);
             
             $('.role-btn').removeClass('active').promise()
             .done(function(){
