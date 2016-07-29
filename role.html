@@ -201,21 +201,17 @@
 
 </div>
     <script type="text/javascript">
-        /*var clickid = "c1";
-        var clickbtnid = "b1";
-        var lastclickid = "c1";
-        var lastclickbtnid = "b1";*/
         var selected = (function(){
             this.character = 'ru';
             return this;
         })();
 
         $(document).ready(function(){
-            $('.role-btn').click(function(){
+            $('.role-btn').click(function(event){
                 var character = $(this).attr('_char');
-                charClick(null, character);
+                charClick(event, character);
             });
-            charClick(event, selected.character);
+            charClick(null, selected.character);
         });
 
         var voice={
