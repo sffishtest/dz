@@ -815,16 +815,19 @@ nav .navbar-right{
 }
 
 .team h2{
-    border-left: 8px solid #494937; 
+    border-left: 8px solid #AAA; 
     color: #494937; 
     padding-left:10px; 
-    
+    font-size: 1.6em;
+    font-weight: bold;
     padding-top: 3px;  
     padding-bottom: 1px;
 }
 .team h3{
+    font-size: 1.2em;
+    font-weight: bold;
     color: #494937; 
-    margin-top: 1.5em;
+    margin-top: 2.2em;
 }
 
 .team .dl-horizontal dt{
@@ -833,6 +836,25 @@ nav .navbar-right{
 .team .dl-horizontal dd{
     margin-left: 7em;
 }
+
+.team .avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+}
+.team .avatar[_name="trivie"]{
+    background-image:url('../image/team/trivie.jpg');
+    background-size: cover;
+}
+.team .avatar[_name="sff"]{
+    background-image:url('../image/team/sff.jpg');
+    background-size: cover;   
+}
+.team .avatar[_name="erato"]{
+    background-image:url('../image/team/erato.jpg');
+    background-size: cover;
+}
+
 @media screen and (max-width: 970px) { /* sm */
     ul.navlist{
         margin-right: 0 !important;
