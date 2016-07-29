@@ -32,6 +32,25 @@ a:focus {
     -webkit-outline: none;
 }
 
+a.dark, a.dark:hover, a.dark:active, a.dark:visited, a.dark:focus{
+    color: #494937;
+    text-decoration: underline;
+}
+
+a.dark:hover, a.dark:active, a.dark:focus{
+    color: #AAA;
+    text-decoration: underline;
+}
+
+a.light, a.light:hover, a.light:active, a.light:visited, a.light:focus{
+    color: #AAA;
+}
+
+a.light:hover, a.light:active, a.light:focus{
+    color: #CCC;
+    text-decoration: underline;
+}
+
 nav {
     position: relative;
     z-index: 10;
@@ -247,13 +266,13 @@ dl.news dt{
 .bg .title{
     z-index: 2;
     height: 250px;
-    width: 400px;
+    width: 390px;
     background-image:url('../image/title.png');
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
     right: 6.5em;
-    bottom: 0em;
+    bottom: -1em;
 }
 
 
